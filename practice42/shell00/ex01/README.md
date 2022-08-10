@@ -22,9 +22,7 @@ total 1
 ```
 
 - en
-- Once you’ve achieved the previous steps, 
-- execute the following command to create
-the file to be submitted: tar -cf testShell00.tar testShell00.
+- Once you’ve achieved the previous steps, execute the following command to create the file to be submitted `tar -cf testShell00.tar testShell00`.
 - ! Don’t worry about what you’ve got instead of "XX".
 - ! A year will be accepted instead of the time, on the timestamp of the
 file.
@@ -33,6 +31,6 @@ file.
 
 - kr
 - 이전 단계들을 완료하였으면 다음 명령어를 실행하여 제출할 파일을 생성하세요. 
-- tar -cf testShell00.tar testShell00
+- `tar -cf testShell00.tar testShell00`
 - ! "XX" 대신 다른 값이 있다고 너무 걱정하지 마세요.
 - ! 파일의 타임스탬프에 시간 대신 연도가 나와도 됩니다.
