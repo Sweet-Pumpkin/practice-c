@@ -61,7 +61,6 @@ int main(void) {
   // 게임 시작
   // startTime = clock(); // 현재 시간을 millisecond(1000분의 1초) 단위로 반환
   gettimeofday(&startTime, NULL);
-  printf("%ld", startTime.tv_sec); 
 
   while (1)
   {
@@ -76,13 +75,13 @@ int main(void) {
     }
 
     // 총 경과 시간
-    // totalElapsedTime = (clock() - startTime) / CLOCKS_PER_SEC * 100;
+    // totalElapsedTime = (clock() - startTime) / CLOCKS_PER_SEC;
     gettimeofday(&endElapsedTime, NULL);
     totalElapsedTime = endElapsedTime.tv_sec - startTime.tv_sec;
     printf("총 경과 시간 : %d초\n", totalElapsedTime);
     // 직전 물 준 시간(마지막으로 물 준 시간) 이후로 흐른 시간
     prevElapsedTime = totalElapsedTime - prevElapsedTime;
-    printf("최근 경과 시간 : %ld초\n", prevElapsedTime);
+    printf("최근 경과 시간 : %d초\n", prevElapsedTime);
 
     // 어항의 물을 감소
     decreaseWater(prevElapsedTime);
@@ -114,7 +113,7 @@ int main(void) {
       printf("모든 물고기가 죽었습니다. 게임을 종료합니다.\n\n");
       exit(0);
     } else {
-      printf("아직 물고기가 살아있습니다.\n");
+      printf("아직 물고기가 살아있습니다.\n\n");
     }
 
     // 10초 => 15초 (5초 : prevElapsedTime => 15초) => 25초 (10초?)
