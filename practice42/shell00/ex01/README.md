@@ -34,3 +34,9 @@ file.
 - `tar -cf testShell00.tar testShell00`
 - ! "XX" 대신 다른 값이 있다고 너무 걱정하지 마세요.
 - ! 파일의 타임스탬프에 시간 대신 연도가 나와도 됩니다.
+
+---
+
+- 참고 사항
+- `chmod`
+- [chmod 명령어 사용법](https://recipes4dev.tistory.com/175)
