@@ -31,5 +31,7 @@ the stolen plans that can save her people and restore freedom to the galaxy...$
 %>diff a b > sw.diff
 ```
 
+- ! man patch
+
 - 참고사항
-- `diff`, `patch`
+- `diff`, `patch`, `cp`

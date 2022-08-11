@@ -23,5 +23,6 @@ file named klist.txt
 ---
 
 - 참고사항
-- `vim`, `nano`
-- [nano 사용법](https://studymake.tistory.com/247)
+- [kerberos 티켓 관리](https://docs.oracle.com/cd/E26925_01/html/E25888/user-8.html)
+- [kerberos 명령어](https://knight76.tistory.com/entry/%EA%B0%84%EB%8B%A8%ED%95%9C-%EC%BB%A4%EB%B3%B4%EB%9F%AC%EC%8A%A4-%EB%AA%85%EB%A0%B9%EC%96%B4)
+- [kerberos 설명](https://velog.io/@jodanbi/Shell-1%EC%9D%BC%EC%B0%A8-Kerberos-%ED%8B%B0%EC%BC%93)
