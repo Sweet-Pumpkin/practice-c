@@ -1,4 +1,4 @@
-## Exercise 08
+## Exercise 09
 > Illusions, not tricks, Michael...
 > Turn-in directory in : ex09/<br />
 > Files to turn in : ft_magic<br />
