@@ -1,6 +1,6 @@
 ## Exercice 00 : ft_putchar
 
-|Exercice 08|
+|Exercice 01|
 |:---:|
 |ft_putchar|
 |Dossier de rendu(Turn-in directory) : ex00/|
