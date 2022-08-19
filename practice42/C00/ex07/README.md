@@ -19,3 +19,6 @@ void fi_putnbr(int nb);
   - ft_putnbr(42) displays "42".
 - 예 :
   - ft_putnbr(42) displays "42".
+
+- TIPS
+  - int = -2147483648 ~ 2147483647
