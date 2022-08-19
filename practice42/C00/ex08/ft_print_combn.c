@@ -17,7 +17,13 @@ void ft_putchar(char c) {
 }
 
 void ft_print_combn(int n) {
+  int arr[10];
+  int idx = 0;
 
+  while (idx < n) {
+    arr[idx] = idx;
+    idx++;
+  }
 }
 
 int main(void) {
