@@ -42,6 +42,10 @@
 #### 백준 코딩테스트 문제 풀이
 [![](https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/images/boj-og.png)](https://www.acmicpc.net/)
 
+[>>> 코딩테스트 문제 풀이 <<<](https://github.com/Sweet-Pumpkin/TIL/blob/main/item/coding-tests/backjoon-c.md)
+
 ### 3. 42 문제
 #### 42 문제 미리 풀어보기
 ![](https://repository-images.githubusercontent.com/237800104/dfc69080-46fb-11eb-9413-0f02ce8f5532)
+
+[>>> La piscine 문제 풀이 <<<](https://github.com/Sweet-Pumpkin/practice-c/tree/main/practice42)
