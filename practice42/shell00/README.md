@@ -28,7 +28,7 @@
 - `-v` : 인쇄되지 않는 문자를 가시 문자로 표시.
 
 #### 6. 참고문헌
-[IBM Documentation cat 명령](https://www.ibm.com/docs/ko/aix/7.2?topic=c-cat-command)
+  - [IBM Documentation cat 명령](https://www.ibm.com/docs/ko/aix/7.2?topic=c-cat-command)
 
 ---
 
@@ -79,7 +79,7 @@
   - `000` : 모든 사용자의 모든 권한 제거. => `---------`
 
 #### 참고 문헌
-[IBM Documentation chmod 명령](https://www.ibm.com/docs/ko/aix/7.3?topic=c-chmod-command)
+  - [IBM Documentation chmod 명령](https://www.ibm.com/docs/ko/aix/7.3?topic=c-chmod-command)
 
 ---
 
@@ -95,7 +95,7 @@
  -  `-s` :  SourceFile 매개변수를 지정할 때는 절대 경로 이름을 사용.
 
  #### 3. 참고 문헌
- [IBM Documentation ln 명령](https://www.ibm.com/docs/ko/aix/7.2?topic=l-ln-command)
+  - [IBM Documentation ln 명령](https://www.ibm.com/docs/ko/aix/7.2?topic=l-ln-command)
 
 ---
 
@@ -114,7 +114,7 @@
 - `kdestroy`
 
 #### 참고 문헌
-[ORACLE Kerberos 티켓 관리](https://docs.oracle.com/cd/E56343_01/html/E53970/kuser-8.html#scrolltoc)
+  - [ORACLE Kerberos 티켓 관리](https://docs.oracle.com/cd/E56343_01/html/E53970/kuser-8.html#scrolltoc)
 
 ---
 
@@ -136,8 +136,8 @@
  -  `-p` : 디렉토리에 슬래시 추가.
 
  #### 3. 참고 문헌
- [Linux -ls 명령어 옵션 정리](https://big-sun.tistory.com/27)
- [ls 역시간순 정렬하기](https://canorus.github.io/2020/12/08/ls_%EC%97%AD%EC%8B%9C%EA%B0%84%EC%88%9C_%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/)
+  - [Linux -ls 명령어 옵션 정리](https://big-sun.tistory.com/27)
+  - [ls 역시간순 정렬하기](https://canorus.github.io/2020/12/08/ls_%EC%97%AD%EC%8B%9C%EA%B0%84%EC%88%9C_%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0/)
 
 ---
 
@@ -154,7 +154,7 @@
   - `%cd` : 커밋 날짜
   - `%s` : 커밋 내용
 #### 3. 참고 문헌
-[git log - commit 리스트 간단하게 출력 (pretty)](https://codechacha.com/ko/git-log-pretty/)
+  - [git log - commit 리스트 간단하게 출력 (pretty)](https://codechacha.com/ko/git-log-pretty/)
 
 ---
 
@@ -181,4 +181,52 @@
   `--error-unmatch` : 파일이 색인에 나타나지 않으면 이를 오류로 간주.
 
 #### 참고 문헌
-[git-ls-files](https://runebook.dev/ko/docs/git/git-ls-files)
+  - [git-ls-files](https://runebook.dev/ko/docs/git/git-ls-files)
+
+### diff
+#### 1. 용어설명
+  - 파일 또는 디렉토리를 비교하여 공통점과 차이점을 확인.
+  - `diff file1 file2`
+#### 2. 플래그
+  - `-b` : 연속된 공백 무시.
+  - `-i` : 대소문자를 구분하지 않음.
+  - `-t` : 출력 라인에 TAB 문자를 넣음.
+  - `-w` : 두 행 비교 시 공백 무시.
+  - `--brief` : 파일 비교 후 같은 지 다른 지 결과 표시.
+  - `d` : 세세한 차이까지 검색.
+  - `-q` : 두 파일의 차이점만 출력.
+  - `-s` : 두 파일이 같은 지 확인.
+  - `-r` : 두 디렉토리의 차이점 출력.
+  - `-u` : 비교하는 파일 또는 디렉토리가 빠져있을 경우 dummy로 처리해서 출력을 통일.
+  - `-r` : 하위 디렉토리 모두 검색.
+  - `-N` : 검색 중 새 파일도 적용 가능.
+#### 3. 참고 문헌
+  - [[Linux diff 명령어]](https://eehoeskrap.tistory.com/248)
+
+### patch
+#### 1. 용어 설명
+  - `diff` 명령어로 만든 패치파일을 이용해 프로젝트나 파일에 패치를 적용하는 명령어.
+  - `patch (file1) (file2) -o (file3)` : file1을 file2에 패치하고, file3을 outfile로 내보냄.
+
+### find
+#### 1. 용어 설명
+  - 리눅스 파일 시스템에서 파일을 검색하는 데 사용되는 명령어.
+#### 2. 플래그
+  - `-name` : 해당 이름의 파일을 찾음. 해당 이름에는 정규 표현식을 활용할 수 있음.
+  - `-type` : 지정된 파일 타입에 해당하는 파일 검색.
+  - `-user` : 해당 유저에게 속한 파일 검색.
+  - `-delete` : 검색된 파일 혹은 디렉토리 삭제.
+  - `-print` : 검색 결과를 출력. 검색 항목은 newline으로 구분.
+#### 3. 참고 문헌
+  - [[Linux] 리눅스 find 명령어 사용법](https://coding-factory.tistory.com/804)
+
+### file
+#### 1. 용어 설명
+  - 지정된 파일의 종류를 확인할 수 있다.
+#### 2. 플래그
+  - `-C` : 매직파일의 포맷을 검사하는 옵션.
+  - `-f` : 은 파일을 한번에 확인하기 위하여 파일리스트인 "목록파일"을 만들어서 그 안에 입력된 모든 파일을 한꺼번에 확인하는 옵션.
+  - `-m` : 지정된 매직파일로 대상파일을 확인하는 것이다.
+#### 3. 참고 문헌
+  - [Linux, 리눅스 시스템의 파일종류(file)](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dudwo567890&logNo=130155338207)
+  
