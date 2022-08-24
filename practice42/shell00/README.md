@@ -183,6 +183,8 @@
 #### 참고 문헌
   - [git-ls-files](https://runebook.dev/ko/docs/git/git-ls-files)
 
+---
+
 ### diff
 #### 1. 용어설명
   - 파일 또는 디렉토리를 비교하여 공통점과 차이점을 확인.
@@ -203,10 +205,14 @@
 #### 3. 참고 문헌
   - [[Linux diff 명령어]](https://eehoeskrap.tistory.com/248)
 
+---
+
 ### patch
 #### 1. 용어 설명
   - `diff` 명령어로 만든 패치파일을 이용해 프로젝트나 파일에 패치를 적용하는 명령어.
   - `patch (file1) (file2) -o (file3)` : file1을 file2에 패치하고, file3을 outfile로 내보냄.
+
+---
 
 ### find
 #### 1. 용어 설명
@@ -220,6 +226,8 @@
 #### 3. 참고 문헌
   - [[Linux] 리눅스 find 명령어 사용법](https://coding-factory.tistory.com/804)
 
+---
+
 ### file
 #### 1. 용어 설명
   - 지정된 파일의 종류를 확인할 수 있다.
@@ -229,4 +237,3 @@
   - `-m` : 지정된 매직파일로 대상파일을 확인하는 것이다.
 #### 3. 참고 문헌
   - [Linux, 리눅스 시스템의 파일종류(file)](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=dudwo567890&logNo=130155338207)
-  
