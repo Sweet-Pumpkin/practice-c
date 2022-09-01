@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: test42 <test42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 18:44:27 by test42            #+#    #+#             */
-/*   Updated: 2022/09/01 18:44:28 by test42           ###   ########.fr       */
+/*   Created: 2022/09/01 18:43:18 by test42            #+#    #+#             */
+/*   Updated: 2022/09/01 18:43:19 by test42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-char *ft_strupcase(char *str)
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 {
     int idx = 0;
-
-    while (str[idx] != '\0')
+    int res = 0;
+    
+    while (src[res] != '\0')
     {
-        if (str[idx] >= 'a' && str[idx] <= 'z')
-        {
-            str[idx] -= 32;
-        }
-
-        idx++;
+        res++;
     }
 
-    return str;
-}
+    if (size != 0)
+    {
+        while (src[idx] != '\0' && idx < size - 1)
+        {
+            dest[idx] = src[idx];
+            idx++;
+        }
+        dest[idx] = '\0';
+    }
 
-// 테스트
-int main(void)
-{
-    char arr1[] = "hello world!";
-    char arr2[] = "What the fxxk?!";
-    char arr3[] = "";
-
-    printf("arr1 : %s\n", ft_strupcase(arr1));
-    printf("arr2 : %s\n", ft_strupcase(arr2));
-    printf("arr3 : %s\n", ft_strupcase(arr3));
-
-    return 0;
+    return res;
 }
