@@ -24,20 +24,21 @@ void ft_swap(int *a, int *b)
 
 void ft_sort_int_tab(int *tab, int size)
 {
-    int NUM, LASTNUM;
-    LASTNUM = size;
+    int num, len;
+    len = size;
 
-    while (LASTNUM > 0){
-        NUM = 0;
-        while (NUM < size - 1)
+    while (len > 0)
+    {
+        num = 0;
+        while (num < size - 1)
         {
-            if (tab[NUM] > tab[NUM + 1])
+            if (tab[num] > tab[num + 1])
             {
-                ft_swap(&tab[NUM], &tab[NUM + 1]);
+                ft_swap(&tab[num], &tab[num + 1]);
             }
-            NUM++;
+            num++;
         }
-        LASTNUM--;
+        len--;
     }
 }   
 
