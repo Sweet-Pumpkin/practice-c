@@ -4,22 +4,25 @@
 
 int main(void) 
 {
-  int arr[60];
-  int idx[46] = { 0, };
-  int res[100] = { 0, };
-  int times;
+  int arr[60]; // 입력된 로또 번호 저장 배열
+  int idx[46] = { 0, }; // 1~45 번호 저장 배열
+  int res[100] = { 0, }; // 1~2번 입력된 번호 저장 배열(결과값)
+  int times; // 입력 받을 로또 회차
 
+  // 사용 설명 파트
   printf("\n******  로또 번호 추출기  ******\n\n");
   printf("- 1등 당첨 번호를 지난 1회차부터 지난 10회차까지 입력하세요.\n");
   printf("- ex) 1 2 3 4 5 6\n");
   printf("\n");
   printf("******************************************\n\n");
 
+  // 로또 회차 입력 파트
   printf("******  마지막 로또 회차를 입력해주세요.  ******\n");
   printf(">>> ");
   scanf("%d", &times);
   printf("\n");
 
+  // 로또 번호 입력 파트
   for (int i = 1; i <= 10 ; i++)
   {
     printf("****** %d회차 당첨 번호 입력 ******\n", (times + 1) - i );
@@ -33,9 +36,11 @@ int main(void)
     printf("\n");
   }
 
+  // 입력 받은 번호 중 1~45가 있으면 카운트 1
   for (int i = 0; i < 60; i++) 
     idx[arr[i]]++;
 
+  // 카운트 된 1~45 번호 중 1번 이상 2번 이하일 경우 결과값 배열에 입력
   int cnt = 0;
   for (int i = 1; i < 46; i++)
   {
@@ -46,6 +51,7 @@ int main(void)
     }
   }
 
+  // 1~2번 나온 당첨 번호 출력 파트
   printf("******  10주 동안 1~2번 나온 당첨 번호  ******\n");
   int num = 0;
   while (res[num] != 0)
@@ -59,6 +65,7 @@ int main(void)
   printf("\n");
   printf("~~~~~~  총 %d개  ~~~~~~\n\n", num);
 
+  // 추천 번호 입력 & 출력 파트
   int recommend, random; 
   srand(time(NULL));
 
