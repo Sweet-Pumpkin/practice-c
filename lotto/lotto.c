@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) 
+{
+  int arr[60];
+  int idx[46] = { 0, };
+  int res[100] = { 0, };
+  int times;
+
+  printf("\n******  로또 번호 추출기  ******\n\n");
+  printf("- 1등 당첨 번호를 지난 1회차부터 지난 10회차까지 입력하세요.\n");
+  printf("- ex) 1 2 3 4 5 6\n");
+  printf("\n");
+  printf("******************************************\n\n");
+
+  printf("******  마지막 로또 회차를 입력해주세요.  ******\n");
+  printf(">>> ");
+  scanf("%d", &times);
+  printf("\n");
+
+  for (int i = 1; i <= 10 ; i++)
+  {
+    printf("****** %d회차 당첨 번호 입력 ******\n", (times + 1) - i );
+    printf(">>> ");
+
+    scanf(
+      "%d %d %d %d %d %d", 
+      &arr[(6 * i) - 6], &arr[(6 * i) - 5], &arr[(6 * i) - 4], &arr[(6 * i) - 3], &arr[(6 * i) - 2], &arr[(6 * i) - 1]
+    );
+
+    printf("\n");
+  }
+
+  for (int i = 0; i < 60; i++) 
+    idx[arr[i]]++;
+
+  int cnt = 0;
+  for (int i = 1; i < 46; i++)
+  {
+    if (idx[i] > 0 && idx[i] < 3)
+    {
+      res[cnt] = i;
+      cnt++;
+    }
+  }
+
+  printf("******  10주 동안 1~2번 나온 당첨 번호  ******\n");
+  int num = 0;
+  while (res[num] != 0)
+  {
+    if (num % 6 == 0) printf("\n");
+    if (res[num + 1] != 0) printf("%d번, ", res[num]);
+    else if (res[num + 1] == 0) printf("%d번\n", res[num]);
+    num++;
+  }
+
+  printf("\n");
+  printf("~~~~~~  총 %d개  ~~~~~~\n\n", num);
+
+  int recommend, random; 
+  srand(time(NULL));
+
+  printf("******  추천 받아 볼 번호 횟수를 입력하세요.  *******\n");
+  printf(">>> ");
+  scanf("%d", &recommend);
+  printf("\n");
+
+  printf("******  추천 번호  ******\n\n");  
+  for (int i = 0; i < recommend; i++)
+  {
+    for (int j = 0; j < 6; j++)
+    {
+      random = rand() % (num - 1) + 1;
+      if (j != 5) printf("%d, ", res[random]);
+      else if (j == 5) printf("%d\n", res[random]);
+    }
+    printf("\n");
+  }
+
+  return 0;
+}
