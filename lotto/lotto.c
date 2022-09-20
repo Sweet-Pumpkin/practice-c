@@ -8,6 +8,7 @@ int main(void)
   int idx[46] = { 0, }; // 1~45 번호 저장 배열
   int res[100] = { 0, }; // 1~2번 입력된 번호 저장 배열(결과값)
   int times; // 입력 받을 로또 회차
+  int temp;
 
   // 사용 설명 파트
   printf("\n******  로또 번호 추출기  ******\n\n");
@@ -67,7 +68,7 @@ int main(void)
 
   // 추천 번호 입력 & 출력 파트
   int recommend, random; 
-  srand(time(NULL));
+  srand((unsigned)time(NULL));
 
   printf("******  추천 받아 볼 번호 횟수를 입력하세요.  *******\n");
   printf(">>> ");
@@ -77,11 +78,34 @@ int main(void)
   printf("******  추천 번호  ******\n\n");  
   for (int i = 0; i < recommend; i++)
   {
+    int lotto[6] = { 0, };
+
+    // 번호 랜덤 출력
     for (int j = 0; j < 6; j++)
     {
-      random = rand() % (num - 1) + 1;
-      if (j != 5) printf("%d, ", res[random]);
-      else if (j == 5) printf("%d\n", res[random]);
+      random = rand() % num;
+      lotto[j] = res[random];
+      
+      // 중복 검사
+      for (int k = 0; k < j; k++)
+        if (lotto[j] == lotto[k]) j--;
+    }
+
+    // 번호 정렬
+    for (int i = 0; i < 6; i++)
+      for (int j = 0; j < 5; j++)
+        if (lotto[j] > lotto[j + 1])
+        {
+          temp = lotto[j];
+          lotto[j] = lotto[j + 1];
+          lotto[j + 1] = temp;
+        }
+
+    // 출력
+    for (int i = 0; i < 6; i++)
+    {
+      if (i < 5) printf("%d, ", lotto[i]);
+      else printf("%d", lotto[i]);
     }
     printf("\n");
   }
