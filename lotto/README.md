@@ -1,7 +1,7 @@
 ## Lotto Number Extractor
 ### 1. Explanation
 - The program is designed to extract the expected lottery winning number called "Lotto 6/45" in Korea.
-- This program collects the results of the recent 10 weeks ago, and extracts the expected number of the winning with the numbers that overlap one or two times.
+- This program extracts new winning numbers by collecting numbers from the latest winning results up to 10 weeks ago.
 
 ### 2. How to use
 1. Enter the latest round of "Lotto 6/45".
