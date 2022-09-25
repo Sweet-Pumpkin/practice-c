@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-// 10주간 당첨 번호 중 0번, 1번, 2번 중복 번호 배열 저장 함수
+// 10주간 당첨 번호 중 0번, 1번, 2번, 3번 중복 번호 배열 저장 함수
 void ft_number(int *idx, int *arr, int num)
 {
   int cnt = 0;
   int i;
 
-  if (num == 3)
+  if (num == 4)
   {
     for (i = 1; i < 46; i++)
     {
@@ -16,7 +16,7 @@ void ft_number(int *idx, int *arr, int num)
       {
         arr[cnt] = i;
         cnt++;
-      } 
+      }  
     }
   }
   else 
@@ -27,7 +27,7 @@ void ft_number(int *idx, int *arr, int num)
       {
         arr[cnt] = i;
         cnt++;
-      } 
+      }  
     }
   }
 }
@@ -37,8 +37,8 @@ int ft_print_num(int *arr, int cnt)
 {
   if (cnt == 0)
     printf("\n\n************  10주 동안 한 번도 나오지 않은 당첨 번호  ************\n");  
-  else if (cnt == 3)
-    printf("\n\n************  10주 동안 3번 이상 나온 당첨 번호  ************\n");
+  else if (cnt == 4)
+    printf("\n\n************  10주 동안 4번 이상 나온 당첨 번호  ************\n");
   else
     printf("\n\n************  10주 동안 %d번 나온 당첨 번호  ************\n", cnt);
 
@@ -64,10 +64,11 @@ int main(void)
   int never_came[100] = { 0, }; // 한 번도 나오지 않은 번호 저장 배열
   int duplicate[100] = { 0, }; // 1번 중복된 번호 저장 배열
   int double_duplicate[100] = { 0, }; // 2번 중복된 번호 저장 배열
-  int many_duplicate[100] = { 0, }; // 3번 이상 중복된 번호 저장 배열
+  int triple_duplicate[100] = { 0, }; // 3번 중복된 번호 저장 배열
+  int many_duplicate[100] = { 0, }; // 4번 이상 중복된 번호 저장 배열
   int plus_duplicate[100] = { 0, }; // 중복 번호 1 + 2
   int times; // 입력 받을 로또 회차
-  int n_num, d_num, dd_num, m_num, p_num; // 0번, 1번, 2번, 1+2번 번호 배열 길이
+  int n_num, d_num, dd_num, t_num, m_num, p_num; // 0번, 1번, 2번, 1+2번 번호 배열 길이
   int i, j, k;
   int temp;
 
@@ -107,13 +108,15 @@ int main(void)
   ft_number(idx, never_came, 0);
   ft_number(idx, duplicate, 1);
   ft_number(idx, double_duplicate, 2);
-  ft_number(idx, many_duplicate, 3);
+  ft_number(idx, triple_duplicate, 3);
+  ft_number(idx, many_duplicate, 4);
 
   // 10주간 당첨 번호 출력 파트
   n_num = ft_print_num(never_came, 0);
   d_num = ft_print_num(duplicate, 1);
   dd_num = ft_print_num(double_duplicate, 2);
-  m_num = ft_print_num(many_duplicate, 3);
+  t_num = ft_print_num(triple_duplicate, 3);
+  m_num = ft_print_num(many_duplicate, 4);
 
   // 중복 번호 1번, 2번 합치기
   p_num = d_num + dd_num;
@@ -154,7 +157,7 @@ int main(void)
       if (j == 3)
       {
         random = rand() % m_num;
-        lotto[j] = many_duplicate[random];
+        lotto[j] = triple_duplicate[random];
       }
       
       if (j >= 4)
@@ -187,5 +190,5 @@ int main(void)
     printf("\n");
   }
 
-  return 0;
+  return (0);
 }
