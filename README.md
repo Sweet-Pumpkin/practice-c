@@ -15,6 +15,8 @@
 
 [![](https://cdn.inflearn.com/wp-content/uploads/nado-2.jpg)](https://www.inflearn.com/course/c-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EA%B2%8C%EC%9E%84/dashboard)
 
+[>>> 학습 내용 보기 <<<]([https://github.com/Sweet-Pumpkin/TIL/blob/main/item/coding-tests/backjoon-c.md](https://github.com/Sweet-Pumpkin/practice-c/tree/main/nado-coding))
+
 <br />
 
 ---
