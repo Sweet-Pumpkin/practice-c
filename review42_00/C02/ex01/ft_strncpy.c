@@ -6,8 +6,28 @@
 /*   By: dano <dano@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:47:04 by dano              #+#    #+#             */
-/*   Updated: 2022/10/19 13:47:06 by dano             ###   ########.fr       */
+/*   Updated: 2022/10/21 19:37:51 by dano             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+char *ft_strncpy(char *dest, char *src, unsigned int n)
+{
+    // -2,147,483,648 <= int <= 2,147,483,647
+    // 0 <= unsigned int <= 4,294,967,295
+    unsigned int i;
 
+    i = 0;
+    while (src[i] != '\0' && i < n)
+    {
+        dest[i] = src[i];
+        i++;
+    }
+
+    while (i < n)
+    {
+        dest[i] = '\0';
+        i++;
+    }
+
+    return (dest);
+}
