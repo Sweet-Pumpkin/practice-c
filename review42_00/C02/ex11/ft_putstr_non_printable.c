@@ -6,7 +6,7 @@
 /*   By: dano <dano@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:11:57 by dano              #+#    #+#             */
-/*   Updated: 2022/10/25 14:40:29 by dano             ###   ########.fr       */
+/*   Updated: 2022/10/25 23:01:26 by dano             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void ft_putstr_non_printable(char *str)
         if (str[i] < 32 || str[i] > 126)
         {
             ft_putchar('\\');
-            ft_putchar(hexa[str[i] / 16 % 16]);
+            ft_putchar(hexa[str[i] / 16]);
             ft_putchar(hexa[str[i] % 16]);
         }
         else
