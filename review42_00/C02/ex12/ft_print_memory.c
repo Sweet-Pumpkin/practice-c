@@ -6,10 +6,9 @@
 /*   By: dano <dano@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 22:28:41 by dano              #+#    #+#             */
-/*   Updated: 2022/10/25 23:12:32 by dano             ###   ########.fr       */
+/*   Updated: 2022/10/25 23:45:03 by dano             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 
 char hexa[] = "0123456789abcdef";
@@ -23,7 +22,7 @@ void ft_putchar(char c)
 // 16진수 변환 함수
 void ft_trans_hexa(unsigned long addr)
 {
-    if (addr > 16)
+    if (addr > 15)
     {
         ft_trans_hexa(addr / 16);
         ft_trans_hexa(addr % 16);
@@ -39,6 +38,7 @@ void ft_print_addr(unsigned long addr)
     int i;
 
     // addr 주소 자릿수 구하기
+    tmp = addr;
     i = 0;
     while (tmp)
     {
@@ -66,6 +66,7 @@ void ft_print_char_hexa(unsigned char *addr, unsigned int len)
 {
     int i;
 
+    // 16진수 출력
     i = 0;
     while (i < len)
     {
@@ -76,6 +77,19 @@ void ft_print_char_hexa(unsigned char *addr, unsigned int len)
         ft_putchar(hexa[addr[i] % 16]);
         i++;
     }
+
+    // 띄어쓰기
+    while (i < 16)
+    {
+        if (i % 2 == 0)
+            ft_putchar(' ');
+
+        ft_putchar(' ');
+        ft_putchar(' ');
+        i++;
+    } 
+
+    ft_putchar(' ');
 }
 
 // 텍스트 출력 함수
@@ -101,6 +115,7 @@ void *ft_print_memory(void *addr, unsigned int size)
     unsigned int first_txt;
     unsigned int len;
 
+    first_txt = 0;
     while (size)
     {   // len 값 적용(몇 줄인지 계산)
         // 한 줄 이상(16 이상)일 경우 len는 16
